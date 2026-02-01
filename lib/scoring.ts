@@ -4,6 +4,7 @@
 import { PriceData } from './fetchers';
 
 export interface SignalScores {
+  [key: string]: number;   // Index signature for compatibility
   D1_Price1M: number;      // 1 month price change
   D2_Price3M: number;      // 3 month price change
   D3_FromHigh: number;     // Distance from 52W high
