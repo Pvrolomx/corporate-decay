@@ -55,7 +55,7 @@ export async function fetchPriceData(ticker: string): Promise<PriceData | null> 
     const pctFromHigh = ((current - high52W) / high52W) * 100;
     
     const volume = volumes[volumes.length - 1] || 0;
-    const avgVolume = volumes.slice(-20).reduce((a, b) => a + (b || 0), 0) / 20;
+    const avgVolume = volumes.slice(-20).reduce((a: number, b: number) => a + (b || 0), 0) / 20;
     const volumeRatio = avgVolume > 0 ? volume / avgVolume : 1;
     
     return {
